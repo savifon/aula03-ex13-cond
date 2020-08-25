@@ -18,6 +18,17 @@ class MainClass {
 		return peso;
   }
 
+	public static double CalcPesoSwitch (double h, char sexo) {
+		switch (sexo){
+			case 'H':
+				return 72.7*h-58;
+			case 'M':
+				return 62.1*h-44.7;
+			default:
+				return -1;
+		}
+	}
+
   public static void Main () {
     char sexo;
 		double h;
@@ -27,6 +38,7 @@ class MainClass {
 		Console.Write("Informe sua altura: ");
 		h = double.Parse(Console.ReadLine());
 
-		Console.WriteLine("Seu peso ideal é: {0}", CalcPeso(h, sexo));
+		//Console.WriteLine("Seu peso ideal é: {0}", CalcPeso(h, sexo));
+		Console.WriteLine("Seu peso ideal é: {0}", CalcPesoSwitch(h, sexo));
   }
 }
